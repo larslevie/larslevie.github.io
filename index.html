@@ -2,22 +2,22 @@
 layout: default
 ---
 
-<div class="home">
+<h1 class="name">Lars Levie</h1>
 
-  <h1 class="page-heading">Posts</h1>
+<ul class="socials">
+  <li>
+    <a href="https://github.com/larslevie"><i class="ss-icon ss-icon-github">github</i></a>
+  </li>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <li>
+    <a href="https://dribbble.com/larslevie" class="dribbble-link"><i class="ss-icon ss-icon-dribbble">dribbble</i></a>
+  </li>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <li>
+    <a href="https://www.linkedin.com/in/larslevie/en"><i class="ss-icon ss-icon-linkedin">linkedin</i></a>
+  </li>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+  <li>
+    <a href="https://twitter.com/larslevie"><i class="ss-icon ss-icon-twitter">twitter</i></a>
+  </li>
+</ul>

@@ -3,32 +3,6 @@
 ---
 @charset "utf-8";
 
-
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
 // Using media queries with like this:
 // @include media-query($on-palm) {
 //     .wrapper {
@@ -42,11 +16,98 @@ $on-laptop:        800px;
     }
 }
 
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "normalize",
+        "suit";
+
+
+
+$pink: #e55b8f;
+$dark-gray: #323333;
+$medium-gray: #6e7476;
+$light-gray: #b8c2c4;
+
+$dribbble-pink: #ea4c89;
+$github-black: #333333;
+$linkedin-blue: #007bb6;
+$twitter-blue: #00aced;
+
+
+.pageContent {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name {
+  color: $dark-gray;
+  font-family: "ostrich_sansheavy", "Helvetica Neue", sans-serif;
+  font-size: 100px;
+  text-align: center;
+}
+
+.socials {
+  @include clearfix;
+
+  margin: 50px auto 0;
+  max-width: 500px;
+  text-align: center;
+}
+
+.socials a {
+  text-decoration: none;
+}
+
+.socials li {
+  float: left;
+  display: block;
+  width: 25%;
+}
+
+.socials a:active .ss-icon-dribbble {
+  color: darken($dribbble-pink, 10%)
+}
+
+.socials a:active .ss-icon-github {
+  color: darken($github-black, 100%)
+}
+
+.socials a:active .ss-icon-linkedin {
+  color: darken($linkedin-blue, 10%)
+}
+
+.socials a:active .ss-icon-twitter {
+  color: darken($twitter-blue, 10%)
+}
+
+.ss-icon {
+  font-size: 20px;
+  color: $medium-gray;
+}
+
+a:hover .ss-icon-dribbble {
+  color: $dribbble-pink;
+}
+
+a:hover .ss-icon-github {
+  color: $github-black;
+}
+
+a:hover .ss-icon-linkedin {
+  color: $linkedin-blue;
+}
+
+a:hover .ss-icon-twitter {
+  color: $twitter-blue;
+}
